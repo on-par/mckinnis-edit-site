@@ -3,24 +3,24 @@ import { Image } from 'astro:assets';
 import '../styles/global.css';
 
 import hero from '../assets/photos/IMG_9619.jpg';
-import svcBrand from '../assets/photos/IMG_9442.jpg';
-import svcPortrait from '../assets/photos/IMG_9526.jpg';
-import svcHeadshot from '../assets/photos/IMG_9631.jpg';
-import svcEvent from '../assets/photos/IMG_9788.jpg';
+import svcBrand from '../assets/photos/IMG_9798.jpg';
+import svcPortrait from '../assets/photos/IMG_9703.jpg';
+import svcHeadshot from '../assets/photos/IMG_9664.jpg';
+import svcEvent from '../assets/photos/IMG_9652.jpg';
 
-import g1 from '../assets/photos/IMG_9437.jpg';
+import g1 from '../assets/photos/IMG_9442.jpg';
 import g2 from '../assets/photos/IMG_9463.jpg';
 import g3 from '../assets/photos/IMG_9482.jpg';
-import g4 from '../assets/photos/IMG_9539.jpg';
-import g5 from '../assets/photos/IMG_9580.jpg';
-import g6 from '../assets/photos/IMG_9664.jpg';
-import g7 from '../assets/photos/IMG_9703.jpg';
-import g8 from '../assets/photos/IMG_9766.jpg';
-import g9 from '../assets/photos/IMG_9832.jpg';
+import g4 from '../assets/photos/IMG_9526.jpg';
+import g5 from '../assets/photos/IMG_9534.jpg';
+import g6 from '../assets/photos/IMG_9721.jpg';
+import g7 from '../assets/photos/IMG_9437.jpg';
+import g8 from '../assets/photos/IMG_9580.jpg';
+import g9 from '../assets/photos/IMG_9688.jpg';
 
 import workshopImg from '../assets/photos/IMG_9674.jpg';
 import aboutBook from '../assets/photos/IMG_9734.jpg';
-import aboutSecond from '../assets/photos/IMG_9553.jpg';
+import aboutSecond from '../assets/photos/IMG_9516.jpg';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const email = 'mckinnis.edit@gmail.com';
@@ -39,42 +39,42 @@ const services = [
     n: '01',
     title: 'Brand Photography',
     img: svcBrand,
-    alt: 'Graduate in a cap and gown photographed among fabric samples in a design showroom.',
+    alt: 'A graduate at a design studio work table, laying out fabric samples and holding a green swatch up to the light.',
     body: 'A library of images built around how your business actually works, so your website, your deck and your feed all sound like the same person.',
   },
   {
     n: '02',
     title: 'Portrait Photography',
     img: svcPortrait,
-    alt: 'Full length portrait of a graduate in an orange dress and navy graduation gown.',
+    alt: 'Close portrait of a graduate in an orange dress, resting her chin on her hands and smiling against a soft pink wall.',
     body: 'Personal, milestone and lifestyle portraits. We plan the session around the version of you that you already recognize, and then we go find it.',
   },
   {
     n: '03',
     title: 'Headshot Photography',
     img: svcHeadshot,
-    alt: 'Close portrait of a graduate wearing a stole, photographed in warm interior light.',
+    alt: 'Seated three quarter portrait of a graduate wearing a UTSA stole, photographed in front of a bookshelf.',
     body: 'Professional headshots for individuals and full teams, shot with consistent light and framing so a directory page looks intentional rather than assembled.',
   },
   {
     n: '04',
     title: 'Event Photography',
     img: svcEvent,
-    alt: 'Graduate holding a diploma cover at a celebration, photographed on location.',
+    alt: 'Graduate in a navy gown holding her cap up in celebration, photographed on location in a design showroom.',
     body: 'Corporate, private and community events. Quiet coverage that stays out of the room and still comes back with the moments people will ask for.',
   },
 ];
 
 const gallery = [
-  { img: g1, alt: 'Graduate reaching toward a wall of design samples during a portrait session.' },
-  { img: g2, alt: 'Graduate seated in a showroom, photographed in soft window light.' },
-  { img: g3, alt: 'Detail of a graduation stole and cords against an orange dress.' },
-  { img: g4, alt: 'Graduate standing beside a display of textiles and trim.' },
-  { img: g5, alt: 'Graduate laughing during a portrait session in a design studio.' },
-  { img: g6, alt: 'Graduate in a navy gown framed by a doorway in warm interior light.' },
-  { img: g7, alt: 'Three quarter portrait of a graduate holding her cap.' },
-  { img: g8, alt: 'Graduate photographed against a patterned wall covering.' },
-  { img: g9, alt: 'Closing frame of the graduate session, photographed at golden hour indoors.' },
+  { img: g1, alt: 'Graduate in an orange university shirt lifting her cap onto her head, photographed close and looking up.' },
+  { img: g2, alt: 'Graduate laughing while reaching for a hanging fabric sample in a design showroom.' },
+  { img: g3, alt: 'Graduate standing between two tall racks of wallpaper samples with both arms raised.' },
+  { img: g4, alt: 'Graduate seated on a showroom sofa reading a design magazine, her cap resting beside her.' },
+  { img: g5, alt: 'Graduate wearing her cap and peeking over the top of an Interior Design magazine.' },
+  { img: g6, alt: 'Graduate holding her navy gown draped over one arm in front of a colorful painting.' },
+  { img: g7, alt: 'Still life of a graduation cap and tassel resting on a stack of upholstery fabric binders.' },
+  { img: g8, alt: 'Graduate working on a laptop from a showroom sofa, photographed in soft window light.' },
+  { img: g9, alt: 'Graduate seated in an upholstered chair, holding her tassel out toward the camera.' },
 ];
 
 const tiers = [
@@ -292,7 +292,7 @@ const tiers = [
           <figure class="ws-figure reveal">
             <Image
               src={workshopImg}
-              alt="Graduate photographed in warm directional light during a portrait session, an example of the lighting taught in the workshops."
+              alt="Close portrait of a graduate making a university hand sign, lit with soft directional light."
               widths={[380, 620, 900]}
               sizes="(max-width: 900px) 88vw, 38vw"
               loading="lazy"
@@ -350,7 +350,7 @@ const tiers = [
             <figure class="reveal">
               <Image
                 src={aboutBook}
-                alt="Graduate seated on a sofa reading Navigating the Liminal Places by Cerissa LaToi McKinnis."
+                alt="Graduate seated on a sofa holding open a copy of Navigating the Liminal Places by Cerissa LaToi McKinnis."
                 widths={[360, 560, 820]}
                 sizes="(max-width: 900px) 88vw, 30vw"
                 loading="lazy"
@@ -362,7 +362,7 @@ const tiers = [
             <figure class="reveal offset">
               <Image
                 src={aboutSecond}
-                alt="Graduate portrait photographed among interior design samples in San Antonio."
+                alt="Still life of a graduation cap and tassel resting on a stack of striped upholstered boxes."
                 widths={[300, 480, 720]}
                 sizes="(max-width: 900px) 88vw, 24vw"
                 loading="lazy"
@@ -509,15 +509,23 @@ const tiers = [
           padding-block: 0.85rem;
           gap: 0.6rem 1rem;
         }
+        /* Keep the nav to a single row so the sticky header stays shallow. */
         .nav {
           order: 3;
           width: 100%;
+          flex-wrap: nowrap;
           justify-content: space-between;
-          gap: 0.5rem;
+          gap: 0.4rem;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .nav::-webkit-scrollbar {
+          display: none;
         }
         .nav a {
-          font-size: 0.62rem;
-          letter-spacing: 0.1em;
+          font-size: 0.58rem;
+          letter-spacing: 0.06em;
+          white-space: nowrap;
         }
       }
 
@@ -660,10 +668,22 @@ const tiers = [
         margin-top: 1.1rem;
         margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
       }
+      /* Nine frames, held in a deliberate 3 by 3 block. */
       .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: clamp(0.75rem, 1.6vw, 1.35rem);
+      }
+      @media (max-width: 860px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .gallery {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
       }
       .shot {
         margin: 0;
@@ -677,14 +697,6 @@ const tiers = [
       }
       .shot:hover img {
         transform: scale(1.04);
-      }
-      .shot:nth-child(3n + 2) img {
-        aspect-ratio: 3 / 4.6;
-      }
-      @media (max-width: 700px) {
-        .shot:nth-child(3n + 2) img {
-          aspect-ratio: 3 / 4;
-        }
       }
 
       /* ---------- Memberships ---------- */
@@ -823,6 +835,11 @@ const tiers = [
         width: 100%;
         aspect-ratio: 3 / 4;
         object-fit: cover;
+      }
+      /* The book frame is a tall crop; hold the top so the cover stays in view. */
+      .about-figures figure:first-child img {
+        aspect-ratio: 3 / 4.6;
+        object-position: 50% 12%;
       }
       .about-figures .offset {
         margin-top: clamp(1.5rem, 4vw, 3.5rem);

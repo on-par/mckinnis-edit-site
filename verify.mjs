@@ -44,16 +44,29 @@ const resp = await page.goto(URL, { waitUntil: 'networkidle', timeout: 60000 });
 check('HTTP 200', resp?.status() === 200, `status ${resp?.status()}`);
 
 // Nudge lazy images into view, then settle.
-await page.evaluate(async () => {
-  const step = window.innerHeight;
-  for (let y = 0; y < document.body.scrollHeight; y += step) {
-    window.scrollTo(0, y);
-    await new Promise((r) => setTimeout(r, 120));
-  }
-  window.scrollTo(0, 0);
-});
-await page.waitForLoadState('networkidle');
-await page.waitForTimeout(1200);
+async function settleImages(p) {
+  await p.evaluate(async () => {
+    const step = Math.round(window.innerHeight * 0.7);
+    for (let y = 0; y < document.body.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 150));
+    }
+    window.scrollTo(0, document.body.scrollHeight);
+    await new Promise((r) => setTimeout(r, 400));
+    window.scrollTo(0, 0);
+  });
+  await p.waitForLoadState('networkidle');
+  // Wait until every <img> has finished decoding.
+  await p
+    .waitForFunction(
+      () => Array.from(document.images).every((i) => i.complete && i.naturalWidth > 0),
+      null,
+      { timeout: 20000 }
+    )
+    .catch(() => {});
+}
+
+await settleImages(page);
 
 check('No console errors', consoleErrors.length === 0, consoleErrors.join(' | '));
 check('No failed network requests', failedRequests.length === 0, failedRequests.join(' | '));
@@ -133,16 +146,7 @@ check('Saved shots/desktop-full.png', true);
 // Mobile
 await page.setViewportSize({ width: 390, height: 844 });
 await page.waitForTimeout(900);
-await page.evaluate(async () => {
-  const step = window.innerHeight;
-  for (let y = 0; y < document.body.scrollHeight; y += step) {
-    window.scrollTo(0, y);
-    await new Promise((r) => setTimeout(r, 100));
-  }
-  window.scrollTo(0, 0);
-});
-await page.waitForLoadState('networkidle');
-await page.waitForTimeout(800);
+await settleImages(page);
 
 const overflow = await page.evaluate(() => ({
   scrollWidth: document.documentElement.scrollWidth,
