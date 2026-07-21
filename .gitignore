@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+build.log
+shots/
+
+# Working files, not part of the published site.
+# The design briefs are marked confidential; this repo is public.
+BRIEF.md
+SOURCE-BRIEF.md
+RESULT.md
+_assets/
