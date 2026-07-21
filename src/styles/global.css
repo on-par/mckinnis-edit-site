@@ -28,6 +28,11 @@
 }
 
 html {
+  /* The canvas colour behind everything. Matters in iOS in-app browsers, where
+     rubber-band overscroll and collapsing toolbars expose the area above the
+     page. Navy there reads as the header, not as a gap. */
+  background: var(--navy);
+  overscroll-behavior-y: none;
   scroll-behavior: smooth;
   /* Clears the sticky header on both breakpoints (desktop 4.25rem, mobile ~6.5rem). */
   scroll-padding-top: 7rem;
@@ -42,9 +47,10 @@ body {
   font-weight: 400;
   font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
   line-height: 1.75;
-  /* clip, not hidden: hidden turns body into a scroll container and can break
-     the sticky header's stacking in WebKit. */
-  overflow-x: clip;
+  /* No overflow constraint here on purpose. Any clip or hidden on body makes it
+     a candidate scroll container, which is what destabilises the sticky header
+     in iOS in-app browsers. Nothing overflows horizontally, so nothing needs
+     clipping. */
 }
 
 /* Everything below the header shares one stacking floor, so no section or
@@ -170,18 +176,26 @@ section {
   outline-offset: 3px;
 }
 
+/* Clipped rather than parked at -9999px, so it never widens the document. */
 .skip {
   position: absolute;
-  left: -9999px;
+  left: 0;
   top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
   background: var(--gold);
   color: var(--navy);
   padding: 0.75rem 1.25rem;
-  z-index: 100;
+  z-index: 1100;
 }
 
 .skip:focus {
-  left: 0;
+  width: auto;
+  height: auto;
+  clip-path: none;
 }
 
 /* Subtle reveal motion */
