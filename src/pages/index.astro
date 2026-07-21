@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import '../styles/global.css';
 
+import logoLight from '../assets/brand/logo-light.png';
+
 import hero from '../assets/photos/IMG_9619.jpg';
 import svcBrand from '../assets/photos/IMG_9798.jpg';
 import svcPortrait from '../assets/photos/IMG_9703.jpg';
@@ -115,15 +117,27 @@ const tiers = [
       content="Brand, portrait, headshot and event photography in San Antonio, Texas."
     />
     <meta property="og:url" content="https://on-par.github.io/mckinnis-edit-site/" />
-    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <link rel="icon" href={`${base}/favicon-32.png`} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
+    <meta property="og:image" content="https://on-par.github.io/mckinnis-edit-site/logo-512.png" />
   </head>
   <body>
     <a class="skip" href="#top">Skip to content</a>
 
     <header class="site-head" id="site-head">
       <div class="wrap head-inner">
-        <a class="mark" href="#top">
-          <span class="mark-1">The McKinnis</span> <span class="mark-2">Edit</span>
+        <a class="mark" href="#top" aria-label="The McKinnis Edit, home">
+          <Image
+            src={logoLight}
+            alt="The McKinnis Edit"
+            widths={[180, 360]}
+            sizes="180px"
+            loading="eager"
+            format="png"
+          />
+          <span class="mark-text">
+            <span class="mark-1">The McKinnis</span> <span class="mark-2">Edit</span>
+          </span>
         </a>
         <nav class="nav" aria-label="Primary">
           {nav.map((item) => <a href={item.href}>{item.label}</a>)}
@@ -394,7 +408,16 @@ const tiers = [
 
     <footer class="foot">
       <div class="wrap foot-inner">
-        <p class="foot-mark">The McKinnis Edit</p>
+        <div class="foot-logo">
+          <Image
+            src={logoLight}
+            alt="The McKinnis Edit"
+            widths={[260, 520]}
+            sizes="260px"
+            loading="lazy"
+            format="png"
+          />
+        </div>
         <p class="foot-meta">
           San Antonio, Texas &middot; <a href={`mailto:${email}`}>{email}</a>
         </p>
@@ -443,7 +466,9 @@ const tiers = [
       .site-head {
         position: sticky;
         top: 0;
-        z-index: 50;
+        /* Sits above every section, and isolates so no image can paint into it. */
+        z-index: 1000;
+        isolation: isolate;
         background: var(--navy);
         border-bottom: 1px solid rgba(209, 165, 74, 0.28);
         transition: box-shadow 0.3s ease;
@@ -459,16 +484,33 @@ const tiers = [
         justify-content: space-between;
       }
       .mark {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        flex: 0 0 auto;
+      }
+      .mark :global(img) {
+        height: clamp(2rem, 1.6rem + 1.3vw, 2.6rem);
+        width: auto;
+      }
+      .mark-text {
         font-family: var(--serif);
         font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
         color: var(--cream);
-        text-decoration: none;
         letter-spacing: 0.02em;
         white-space: nowrap;
+        padding-left: 0.85rem;
+        margin-left: 0.85rem;
+        border-left: 1px solid rgba(209, 165, 74, 0.35);
       }
       .mark-2 {
         font-style: italic;
         color: var(--gold);
+      }
+      @media (max-width: 420px) {
+        .mark-text {
+          display: none;
+        }
       }
       .nav {
         display: flex;
@@ -906,11 +948,12 @@ const tiers = [
         flex-direction: column;
         gap: 0.6rem;
       }
-      .foot-mark {
-        font-family: var(--serif);
-        font-size: 1.15rem;
-        color: var(--cream);
-        margin: 0;
+      .foot-logo {
+        margin-bottom: 0.75rem;
+      }
+      .foot-logo :global(img) {
+        height: 3rem;
+        width: auto;
       }
       .foot-meta {
         margin: 0;
