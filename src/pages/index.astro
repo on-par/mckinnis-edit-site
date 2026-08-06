@@ -4,25 +4,25 @@ import '../styles/global.css';
 
 import logoLight from '../assets/brand/logo-light.png';
 
-import hero from '../assets/photos/IMG_9619.jpg';
-import svcBrand from '../assets/photos/IMG_9798.jpg';
-import svcPortrait from '../assets/photos/IMG_9703.jpg';
-import svcHeadshot from '../assets/photos/IMG_9664.jpg';
-import svcEvent from '../assets/photos/IMG_9652.jpg';
+import hero from '../assets/photos/branding-headshots/branding-01.jpg';
+import svcBrand from '../assets/photos/interior-design/interior-04.jpg';
+import svcPortrait from '../assets/photos/wedding/wedding-30.jpg';
+import svcHeadshot from '../assets/photos/branding-headshots/branding-03.jpg';
+import svcEvent from '../assets/photos/wedding/wedding-25.jpg';
 
-import g1 from '../assets/photos/IMG_9442.jpg';
-import g2 from '../assets/photos/IMG_9463.jpg';
-import g3 from '../assets/photos/IMG_9482.jpg';
-import g4 from '../assets/photos/IMG_9526.jpg';
-import g5 from '../assets/photos/IMG_9534.jpg';
-import g6 from '../assets/photos/IMG_9721.jpg';
-import g7 from '../assets/photos/IMG_9437.jpg';
-import g8 from '../assets/photos/IMG_9580.jpg';
-import g9 from '../assets/photos/IMG_9688.jpg';
+import g1 from '../assets/photos/wedding/wedding-01.jpg';
+import g2 from '../assets/photos/interior-design/interior-06.jpg';
+import g3 from '../assets/photos/branding-headshots/branding-02.jpg';
+import g4 from '../assets/photos/wedding/wedding-35.jpg';
+import g5 from '../assets/photos/interior-design/interior-01.jpg';
+import g6 from '../assets/photos/wedding/wedding-05.jpg';
+import g7 from '../assets/photos/branding-headshots/branding-05.jpg';
+import g8 from '../assets/photos/wedding/wedding-10.jpg';
+import g9 from '../assets/photos/interior-design/interior-02.jpg';
 
-import workshopImg from '../assets/photos/IMG_9674.jpg';
-import aboutBook from '../assets/photos/IMG_9734.jpg';
-import aboutSecond from '../assets/photos/IMG_9516.jpg';
+import workshopImg from '../assets/photos/branding-headshots/branding-06.jpg';
+import aboutBook from '../assets/photos/interior-design/interior-05.jpg';
+import aboutSecond from '../assets/photos/wedding/wedding-15.jpg';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const email = 'mckinnis.edit@gmail.com';
@@ -41,42 +41,42 @@ const services = [
     n: '01',
     title: 'Brand Photography',
     img: svcBrand,
-    alt: 'A graduate at a design studio work table, laying out fabric samples and holding a green swatch up to the light.',
+    alt: 'Wide view of a designed kitchen with deep green cabinetry, a marble backsplash and lantern pendants.',
     body: 'A library of images built around how your business actually works, so your website, your deck and your feed all sound like the same person.',
   },
   {
     n: '02',
     title: 'Portrait Photography',
     img: svcPortrait,
-    alt: 'Close portrait of a graduate in an orange dress, resting her chin on her hands and smiling against a soft pink wall.',
+    alt: 'Black and white profile portrait of a bride resting her chin on her hand in soft window light.',
     body: 'Personal, milestone and lifestyle portraits. We plan the session around the version of you that you already recognize, and then we go find it.',
   },
   {
     n: '03',
     title: 'Headshot Photography',
     img: svcHeadshot,
-    alt: 'Seated three quarter portrait of a graduate wearing a UTSA stole, photographed in front of a bookshelf.',
+    alt: 'Professional headshot of a healthcare professional in a white coat with a stethoscope, arms crossed, against a light backdrop.',
     body: 'Professional headshots for individuals and full teams, shot with consistent light and framing so a directory page looks intentional rather than assembled.',
   },
   {
     n: '04',
     title: 'Event Photography',
     img: svcEvent,
-    alt: 'Graduate in a navy gown holding her cap up in celebration, photographed on location in a design showroom.',
+    alt: 'A bride descending a curved staircase with a young flower girl beside her, framed by a tall arched window.',
     body: 'Corporate, private and community events. Quiet coverage that stays out of the room and still comes back with the moments people will ask for.',
   },
 ];
 
 const gallery = [
-  { img: g1, alt: 'Graduate in an orange university shirt lifting her cap onto her head, photographed close and looking up.' },
-  { img: g2, alt: 'Graduate laughing while reaching for a hanging fabric sample in a design showroom.' },
-  { img: g3, alt: 'Graduate standing between two tall racks of wallpaper samples with both arms raised.' },
-  { img: g4, alt: 'Graduate seated on a showroom sofa reading a design magazine, her cap resting beside her.' },
-  { img: g5, alt: 'Graduate wearing her cap and peeking over the top of an Interior Design magazine.' },
-  { img: g6, alt: 'Graduate holding her navy gown draped over one arm in front of a colorful painting.' },
-  { img: g7, alt: 'Still life of a graduation cap and tassel resting on a stack of upholstery fabric binders.' },
-  { img: g8, alt: 'Graduate working on a laptop from a showroom sofa, photographed in soft window light.' },
-  { img: g9, alt: 'Graduate seated in an upholstered chair, holding her tassel out toward the camera.' },
+  { img: g1, alt: 'A newlywed couple posed close together, the bride wearing a jeweled tiara.' },
+  { img: g2, alt: 'Detail of brushed brass cabinet pulls mounted on deep green cabinet doors.' },
+  { img: g3, alt: 'Warm studio headshot of a smiling man in a white shirt and gold chain.' },
+  { img: g4, alt: 'A father in a tuxedo holding his young daughter in a white dress outside a wedding venue.' },
+  { img: g5, alt: "A butler's pantry with deep green cabinetry, floating shelves and a built-in wine refrigerator." },
+  { img: g6, alt: 'A tiered wedding cake decorated with painted vines and fresh sunflowers.' },
+  { img: g7, alt: 'Environmental portrait of a professional in a dark blazer holding a notebook outside a columned building.' },
+  { img: g8, alt: 'Black and white candid of a wedding guest lighting a floating candle.' },
+  { img: g9, alt: 'Gold-framed bar stools set against a reclaimed wood island.' },
 ];
 
 const tiers = [
@@ -168,7 +168,7 @@ const tiers = [
           <figure class="hero-figure">
             <Image
               src={hero}
-              alt="Graduate in a navy gown and orange dress reaching toward a wall of design samples, photographed by The McKinnis Edit."
+              alt="Studio brand portrait of a woman in a houndstooth jacket and black turtleneck, turning to look off camera against a white backdrop, photographed by The McKinnis Edit."
               widths={[420, 720, 1080]}
               sizes="(max-width: 900px) 88vw, 42vw"
               loading="eager"
@@ -176,7 +176,7 @@ const tiers = [
               format="webp"
               quality={72}
             />
-            <figcaption>Graduate session, San Antonio</figcaption>
+            <figcaption>Brand portrait, San Antonio</figcaption>
           </figure>
         </div>
       </section>
@@ -238,8 +238,8 @@ const tiers = [
           <p class="eyebrow">Featured work</p>
           <h2 id="work-title">Selected frames</h2>
           <p class="work-note">
-            A graduate session photographed in a San Antonio design showroom. One afternoon, one
-            person, one story told all the way through.
+            Weddings, brand headshots and interior work from around San Antonio. Different rooms,
+            different people, the same eye carried all the way through.
           </p>
           <div class="gallery">
             {
@@ -306,7 +306,7 @@ const tiers = [
           <figure class="ws-figure reveal">
             <Image
               src={workshopImg}
-              alt="Close portrait of a graduate making a university hand sign, lit with soft directional light."
+              alt="Black and white portrait of a woman draped in an American flag against a dark backdrop."
               widths={[380, 620, 900]}
               sizes="(max-width: 900px) 88vw, 38vw"
               loading="lazy"
@@ -364,19 +364,19 @@ const tiers = [
             <figure class="reveal">
               <Image
                 src={aboutBook}
-                alt="Graduate seated on a sofa holding open a copy of Navigating the Liminal Places by Cerissa LaToi McKinnis."
+                alt="A quiet interior corner with two leather chairs, patterned wallpaper and soft window light."
                 widths={[360, 560, 820]}
                 sizes="(max-width: 900px) 88vw, 30vw"
                 loading="lazy"
                 format="webp"
                 quality={70}
               />
-              <figcaption>Navigating the Liminal Places by Cerissa McKinnis</figcaption>
+              <figcaption>Interiors, in the spirit of Navigating the Liminal Places by Cerissa McKinnis</figcaption>
             </figure>
             <figure class="reveal offset">
               <Image
                 src={aboutSecond}
-                alt="Still life of a graduation cap and tassel resting on a stack of striped upholstered boxes."
+                alt="Black and white image of a bride raising her bouquet overhead, wearing a beaded gown and tiara."
                 widths={[300, 480, 720]}
                 sizes="(max-width: 900px) 88vw, 24vw"
                 loading="lazy"
