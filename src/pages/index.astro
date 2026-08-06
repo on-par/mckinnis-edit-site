@@ -29,11 +29,7 @@ const email = 'mckinnis.edit@gmail.com';
 
 const nav = [
   { href: '#work', label: 'Work' },
-  { href: '#services', label: 'Services' },
-  { href: '#memberships', label: 'Memberships' },
-  { href: '#workshops', label: 'Workshops' },
   { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
 ];
 
 const services = [
@@ -151,9 +147,15 @@ const tiers = [
       <section class="hero dark" aria-labelledby="hero-title">
         <div class="wrap hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">San Antonio, Texas</p>
-            <h1 id="hero-title">
-              The McKinnis <em>Edit</em>
+            <h1 id="hero-title" class="hero-logo">
+              <Image
+                src={logoLight}
+                alt="The McKinnis Edit"
+                widths={[320, 480, 640]}
+                sizes="(max-width: 900px) 70vw, 26rem"
+                loading="eager"
+                format="png"
+              />
             </h1>
             <hr class="rule" />
             <p class="lede">
@@ -603,15 +605,12 @@ const tiers = [
         align-items: center;
       }
       .hero h1 {
-        font-size: clamp(2.9rem, 1.6rem + 6vw, 6.2rem);
-        line-height: 0.98;
-        color: var(--cream);
         margin: 0 0 1.75rem;
       }
-      .hero h1 em {
+      .hero-logo :global(img) {
         display: block;
-        font-style: italic;
-        color: var(--gold);
+        width: min(100%, 26rem);
+        height: auto;
       }
       .lede {
         font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.18rem);
