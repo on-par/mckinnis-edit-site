@@ -20,19 +20,16 @@ import g7 from '../assets/photos/IMG_9437.jpg';
 import g8 from '../assets/photos/IMG_9580.jpg';
 import g9 from '../assets/photos/IMG_9688.jpg';
 
-import workshopImg from '../assets/photos/IMG_9674.jpg';
 import aboutBook from '../assets/photos/IMG_9734.jpg';
 import aboutSecond from '../assets/photos/IMG_9516.jpg';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const email = 'mckinnis.edit@gmail.com';
+const email = 'themckinnisedit@gmail.com';
 
 const nav = [
-  { href: '#work', label: 'Work' },
-  { href: '#services', label: 'Services' },
-  { href: '#memberships', label: 'Memberships' },
-  { href: '#workshops', label: 'Workshops' },
   { href: '#about', label: 'About' },
+  { href: '#work', label: 'Portfolio' },
+  { href: '#services', label: 'Services' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -79,23 +76,6 @@ const gallery = [
   { img: g9, alt: 'Graduate seated in an upholstered chair, holding her tassel out toward the camera.' },
 ];
 
-const tiers = [
-  {
-    name: 'The Moment',
-    kicker: 'Entry level support',
-    body: 'For the business that needs current, on brand images and does not need a full production. One focused session, delivered ready to publish.',
-  },
-  {
-    name: 'The Momentum',
-    kicker: 'Ongoing content',
-    body: 'Regular sessions across the year so your brand imagery keeps pace with what you are actually launching, hiring for and selling.',
-  },
-  {
-    name: 'The Archive',
-    kicker: 'Comprehensive documentation',
-    body: 'The full visual record of a company. Team, space, product, process and leadership, documented and organized so anyone on your team can pull the right frame.',
-  },
-];
 ---
 
 <!doctype html>
@@ -139,7 +119,6 @@ const tiers = [
         <nav class="nav" aria-label="Primary">
           {nav.map((item) => <a href={item.href}>{item.label}</a>)}
         </nav>
-        <a class="head-cta" href={`mailto:${email}`}>Book</a>
       </div>
     </header>
 
@@ -252,79 +231,6 @@ const tiers = [
                 </figure>
               ))
             }
-          </div>
-        </div>
-      </section>
-
-      <!-- MEMBERSHIPS -->
-      <section id="memberships" class="memberships" aria-labelledby="memberships-title">
-        <div class="wrap">
-          <p class="eyebrow">Brand retainer memberships</p>
-          <h2 id="memberships-title">Photography that keeps up with the business</h2>
-          <p class="section-lede">
-            Most brands do not need one shoot. They need images arriving all year, in the same
-            voice. Three tiers, one standard.
-          </p>
-          <div class="tiers">
-            {
-              tiers.map((t) => (
-                <article class="tier reveal">
-                  <p class="tier-kicker">{t.kicker}</p>
-                  <h3>{t.name}</h3>
-                  <p>{t.body}</p>
-                </article>
-              ))
-            }
-          </div>
-          <div class="steps reveal">
-            <div class="step">
-              <h3>The Foundation</h3>
-              <p>
-                Every membership opens here. A working session on your brand, your audience and the
-                shot list that follows from both, so the first frame is already on strategy.
-              </p>
-            </div>
-            <div class="step">
-              <h3>The Launch</h3>
-              <p>
-                A starting package for new clients with something to announce. Built for the moment
-                a business, a role or a book goes public.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WORKSHOPS -->
-      <section id="workshops" class="workshops dark" aria-labelledby="workshops-title">
-        <div class="wrap ws-grid">
-          <figure class="ws-figure reveal">
-            <Image
-              src={workshopImg}
-              alt="Close portrait of a graduate making a university hand sign, lit with soft directional light."
-              widths={[380, 620, 900]}
-              sizes="(max-width: 900px) 88vw, 38vw"
-              loading="lazy"
-              format="webp"
-              quality={70}
-            />
-          </figure>
-          <div class="ws-copy">
-            <p class="eyebrow">Workshops</p>
-            <h2 id="workshops-title">Learn the craft in the room</h2>
-            <p>
-              Live sessions for aspiring photographers and creatives. Recent workshops have covered
-              lighting, posing and framing, taught the way they are actually used on a paid job
-              rather than in theory.
-            </p>
-            <p>
-              Every workshop runs a standard tier, with a VIP Business Strategy upgrade for
-              photographers who want to talk pricing, packaging and how the work becomes a
-              business.
-            </p>
-            <a class="btn" href={`mailto:${email}?subject=Workshop%20interest`}
-              >Ask about the next date</a
-            >
           </div>
         </div>
       </section>
@@ -537,19 +443,6 @@ const tiers = [
         color: var(--gold);
         border-color: var(--gold);
       }
-      .head-cta {
-        font-size: 0.68rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: var(--navy);
-        background: var(--gold);
-        padding: 0.6rem 1.15rem;
-        transition: opacity 0.25s ease;
-      }
-      .head-cta:hover {
-        opacity: 0.85;
-      }
       @media (max-width: 860px) {
         .head-inner {
           flex-wrap: wrap;
@@ -733,106 +626,6 @@ const tiers = [
       }
       .shot:hover img {
         transform: scale(1.04);
-      }
-
-      /* ---------- Memberships ---------- */
-      .memberships {
-        background: var(--cream);
-      }
-      .memberships h2 {
-        font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.8rem);
-        color: var(--navy);
-        max-width: 18ch;
-      }
-      .section-lede {
-        margin-top: 1.15rem;
-        margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
-        max-width: 46ch;
-        color: var(--ink-soft);
-      }
-      .tiers {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: clamp(1.25rem, 2.5vw, 2rem);
-      }
-      .tier {
-        background: #fff;
-        border: 1px solid rgba(36, 59, 108, 0.12);
-        border-top: 3px solid var(--gold);
-        padding: clamp(1.5rem, 3vw, 2.25rem);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-      }
-      .tier:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 40px rgba(36, 59, 108, 0.1);
-      }
-      .tier-kicker {
-        font-size: 0.66rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.6rem;
-      }
-      .tier h3 {
-        font-size: 1.55rem;
-        color: var(--navy);
-        margin-bottom: 0.85rem;
-      }
-      .tier p {
-        font-size: 0.94rem;
-        color: var(--ink-soft);
-        margin: 0;
-      }
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: clamp(1.5rem, 4vw, 3.5rem);
-        margin-top: clamp(2.5rem, 5vw, 4rem);
-        padding-top: clamp(2rem, 4vw, 3rem);
-        border-top: 1px solid rgba(36, 59, 108, 0.15);
-      }
-      .step h3 {
-        font-size: 1.25rem;
-        color: var(--navy);
-        margin-bottom: 0.6rem;
-      }
-      .step p {
-        font-size: 0.94rem;
-        color: var(--ink-soft);
-        margin: 0;
-      }
-
-      /* ---------- Workshops ---------- */
-      .ws-grid {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: clamp(2rem, 5vw, 4.5rem);
-        align-items: center;
-      }
-      .ws-figure {
-        margin: 0;
-      }
-      .ws-figure img {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        border: 1px solid rgba(209, 165, 74, 0.3);
-      }
-      .workshops h2 {
-        font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.8rem);
-        margin-bottom: 1.4rem;
-      }
-      .workshops p {
-        color: var(--tan);
-        max-width: 48ch;
-      }
-      .workshops .btn {
-        margin-top: 1rem;
-      }
-      @media (max-width: 900px) {
-        .ws-grid {
-          grid-template-columns: 1fr;
-        }
       }
 
       /* ---------- About ---------- */
