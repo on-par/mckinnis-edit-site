@@ -25,6 +25,16 @@ import aboutSecond from '../assets/photos/IMG_9516.jpg';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const email = 'themckinnisedit@gmail.com';
+const phone = '210-376-1166';
+const phoneHref = 'tel:+12103761166';
+const bookingUrl =
+  'https://hello.dubsado.com/public/appointment-scheduler/62105b369a4d30eaf363a718/schedule';
+
+const social = [
+  { label: 'Instagram', href: 'https://www.instagram.com/themckinnisedit/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/michael-mckinnis-1122ab245/' },
+  { label: 'Threads', href: 'https://www.threads.com/@themckinnisedit' },
+];
 
 const nav = [
   { href: '#about', label: 'About' },
@@ -135,7 +145,9 @@ const gallery = [
               something. Nearly thirty years behind the camera, applied to one story at a time.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-solid" href={`mailto:${email}`}>Book a session</a>
+              <a class="btn btn-solid" href={bookingUrl} target="_blank" rel="noopener">
+                Book a session
+              </a>
               <a class="btn" href="#work">View the work</a>
             </div>
           </div>
@@ -298,11 +310,26 @@ const gallery = [
             Tell me what you are building and when you need the images. I will come back with a
             plan, a date and a clear price.
           </p>
-          <a class="btn btn-solid contact-btn" href={`mailto:${email}`}>{email}</a>
+          <div class="contact-actions">
+            <a class="btn btn-solid" href={bookingUrl} target="_blank" rel="noopener">
+              Book a session
+            </a>
+            <a class="btn contact-btn" href={`mailto:${email}`}>{email}</a>
+          </div>
           <p class="contact-meta">
             San Antonio, Texas<br />
-            Serving San Antonio, Austin, Houston and Dallas
+            Serving San Antonio, Austin, Houston and Dallas<br />
+            <a class="contact-phone" href={phoneHref}>{phone}</a>
           </p>
+          <div class="contact-social">
+            {
+              social.map((s) => (
+                <a href={s.href} target="_blank" rel="noopener">
+                  {s.label}
+                </a>
+              ))
+            }
+          </div>
         </div>
       </section>
     </main>
@@ -708,6 +735,12 @@ const gallery = [
         max-width: 44ch;
         margin-bottom: 2.25rem;
       }
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9rem;
+      }
       .contact-btn {
         font-size: 0.8rem;
         letter-spacing: 0.12em;
@@ -721,6 +754,38 @@ const gallery = [
         text-transform: uppercase;
         color: var(--sage);
         line-height: 2;
+      }
+      .contact-phone {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.25s ease, border-color 0.25s ease;
+      }
+      .contact-phone:hover,
+      .contact-phone:focus-visible {
+        color: var(--gold);
+        border-color: var(--gold);
+      }
+      .contact-social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      .contact-social a {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--tan);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.25s ease, border-color 0.25s ease;
+      }
+      .contact-social a:hover,
+      .contact-social a:focus-visible {
+        color: var(--gold);
+        border-color: var(--gold);
       }
 
       /* ---------- Footer ---------- */
