@@ -135,9 +135,6 @@ const tiers = [
             loading="eager"
             format="png"
           />
-          <span class="mark-text">
-            <span class="mark-1">The McKinnis</span> <span class="mark-2">Edit</span>
-          </span>
         </a>
         <nav class="nav" aria-label="Primary">
           {nav.map((item) => <a href={item.href}>{item.label}</a>)}
@@ -152,9 +149,7 @@ const tiers = [
         <div class="wrap hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">San Antonio, Texas</p>
-            <h1 id="hero-title">
-              The McKinnis <em>Edit</em>
-            </h1>
+            <h1 id="hero-title" class="visually-hidden">The McKinnis Edit</h1>
             <hr class="rule" />
             <p class="lede">
               Brand, portrait, headshot and event photography for people who are building
@@ -418,9 +413,6 @@ const tiers = [
             format="png"
           />
         </div>
-        <p class="foot-meta">
-          San Antonio, Texas &middot; <a href={`mailto:${email}`}>{email}</a>
-        </p>
         <p class="foot-fine">
           All photography is original work by Michael McKinnis / The McKinnis Edit.
         </p>
@@ -462,6 +454,20 @@ const tiers = [
     </script>
 
     <style>
+      /* Removed from view but kept for screen readers and document outline
+         (preserves the page's single h1 and the hero's aria-labelledby). */
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
       /* ---------- Header ---------- */
       .site-head {
         position: sticky;
@@ -510,25 +516,6 @@ const tiers = [
       .mark :global(img) {
         height: clamp(2rem, 1.6rem + 1.3vw, 2.6rem);
         width: auto;
-      }
-      .mark-text {
-        font-family: var(--serif);
-        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
-        color: var(--cream);
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-        padding-left: 0.85rem;
-        margin-left: 0.85rem;
-        border-left: 1px solid rgba(209, 165, 74, 0.35);
-      }
-      .mark-2 {
-        font-style: italic;
-        color: var(--gold);
-      }
-      @media (max-width: 420px) {
-        .mark-text {
-          display: none;
-        }
       }
       .nav {
         display: flex;
@@ -601,17 +588,6 @@ const tiers = [
         grid-template-columns: 1.05fr 0.95fr;
         gap: clamp(2rem, 5vw, 4.5rem);
         align-items: center;
-      }
-      .hero h1 {
-        font-size: clamp(2.9rem, 1.6rem + 6vw, 6.2rem);
-        line-height: 0.98;
-        color: var(--cream);
-        margin: 0 0 1.75rem;
-      }
-      .hero h1 em {
-        display: block;
-        font-style: italic;
-        color: var(--gold);
       }
       .lede {
         font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.18rem);
@@ -972,17 +948,6 @@ const tiers = [
       .foot-logo :global(img) {
         height: 3rem;
         width: auto;
-      }
-      .foot-meta {
-        margin: 0;
-        font-size: 0.85rem;
-      }
-      .foot-meta a {
-        color: var(--gold);
-        text-decoration: none;
-      }
-      .foot-meta a:hover {
-        text-decoration: underline;
       }
       .foot-fine {
         margin: 0;
