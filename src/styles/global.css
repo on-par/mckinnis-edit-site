@@ -96,6 +96,12 @@ a {
 
 section {
   padding-block: clamp(4rem, 9vw, 8.5rem);
+  /* Anchor/nav scroll targets land just below the sticky header instead of
+     inside this section's own top padding, which otherwise reads as a big
+     empty gap before the heading. scroll-padding-top already clears the
+     header; this cancels most of the section's own padding on top of that,
+     leaving a small, consistent gap. */
+  scroll-margin-top: calc(2rem - clamp(4rem, 9vw, 8.5rem));
 }
 
 .eyebrow {
