@@ -10,29 +10,39 @@ import svcPortrait from '../assets/photos/IMG_9703.jpg';
 import svcHeadshot from '../assets/photos/IMG_9664.jpg';
 import svcEvent from '../assets/photos/IMG_9652.jpg';
 
-import g1 from '../assets/photos/IMG_9442.jpg';
-import g2 from '../assets/photos/IMG_9463.jpg';
-import g3 from '../assets/photos/IMG_9482.jpg';
-import g4 from '../assets/photos/IMG_9526.jpg';
-import g5 from '../assets/photos/IMG_9534.jpg';
-import g6 from '../assets/photos/IMG_9721.jpg';
-import g7 from '../assets/photos/IMG_9437.jpg';
-import g8 from '../assets/photos/IMG_9580.jpg';
-import g9 from '../assets/photos/IMG_9688.jpg';
+import g1 from '../assets/photos/portfolio-branding-03.jpg';
+import g2 from '../assets/photos/portfolio-wedding-12.jpg';
+import g3 from '../assets/photos/portfolio-interior-05.jpg';
+import g4 from '../assets/photos/portfolio-branding-06.jpg';
+import g5 from '../assets/photos/portfolio-self-image.jpg';
+import g6 from '../assets/photos/portfolio-wedding-02.jpg';
+import g7 from '../assets/photos/portfolio-interior-01.jpg';
+import g8 from '../assets/photos/portfolio-branding-01.jpg';
+import g9 from '../assets/photos/portfolio-wedding-18.jpg';
+import g10 from '../assets/photos/portfolio-branding-08.jpg';
+import g11 from '../assets/photos/portfolio-interior-03.jpg';
+import g12 from '../assets/photos/portfolio-wedding-08.jpg';
 
-import workshopImg from '../assets/photos/IMG_9674.jpg';
 import aboutBook from '../assets/photos/IMG_9734.jpg';
-import aboutSecond from '../assets/photos/IMG_9516.jpg';
+import aboutHeadshot from '../assets/photos/michael-mckinnis-headshot.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const email = 'mckinnis.edit@gmail.com';
+const email = 'themckinnisedit@gmail.com';
+const phone = '210-376-1166';
+const phoneHref = 'tel:+12103761166';
+const bookingUrl =
+  'https://hello.dubsado.com/public/appointment-scheduler/62105b369a4d30eaf363a718/schedule';
+
+const social = [
+  { label: 'Instagram', href: 'https://www.instagram.com/themckinnisedit/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/michael-mckinnis-1122ab245/' },
+  { label: 'Threads', href: 'https://www.threads.com/@themckinnisedit' },
+];
 
 const nav = [
-  { href: '#work', label: 'Work' },
-  { href: '#services', label: 'Services' },
-  { href: '#memberships', label: 'Memberships' },
-  { href: '#workshops', label: 'Workshops' },
   { href: '#about', label: 'About' },
+  { href: '#work', label: 'Portfolio' },
+  { href: '#services', label: 'Services' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -68,34 +78,20 @@ const services = [
 ];
 
 const gallery = [
-  { img: g1, alt: 'Graduate in an orange university shirt lifting her cap onto her head, photographed close and looking up.' },
-  { img: g2, alt: 'Graduate laughing while reaching for a hanging fabric sample in a design showroom.' },
-  { img: g3, alt: 'Graduate standing between two tall racks of wallpaper samples with both arms raised.' },
-  { img: g4, alt: 'Graduate seated on a showroom sofa reading a design magazine, her cap resting beside her.' },
-  { img: g5, alt: 'Graduate wearing her cap and peeking over the top of an Interior Design magazine.' },
-  { img: g6, alt: 'Graduate holding her navy gown draped over one arm in front of a colorful painting.' },
-  { img: g7, alt: 'Still life of a graduation cap and tassel resting on a stack of upholstery fabric binders.' },
-  { img: g8, alt: 'Graduate working on a laptop from a showroom sofa, photographed in soft window light.' },
-  { img: g9, alt: 'Graduate seated in an upholstered chair, holding her tassel out toward the camera.' },
+  { img: g1, alt: 'Branding headshot of a pharmacist in a white coat with a stethoscope, arms crossed, smiling against a light gray backdrop.' },
+  { img: g2, alt: 'Close portrait of a bride and groom, foreheads together, taken during their wedding day.' },
+  { img: g3, alt: 'Interior design detail shot of a dark green built-in bar with brass hardware and open wine storage.' },
+  { img: g4, alt: 'Branding headshot of a man in a suit looking back over his shoulder, photographed outdoors with columns in the background.' },
+  { img: g5, alt: 'Black and white branding portrait of a woman draped in an American flag against a dark background.' },
+  { img: g6, alt: 'Wedding portrait of a father and son in matching formalwear, leaning against a brick column.' },
+  { img: g7, alt: 'Interior design detail shot of matching brass cabinet pulls on dark green cabinetry.' },
+  { img: g8, alt: 'Branding headshot of a man in a black hat and patterned shirt, smiling against a white backdrop.' },
+  { img: g9, alt: 'Close-up of a couple exchanging wedding rings, hands only.' },
+  { img: g10, alt: 'Branding headshot of a woman in a dark blazer with statement earrings, photographed against a charcoal backdrop.' },
+  { img: g11, alt: 'Interior design wide shot of a green kitchen island with open wood shelving and styled decor.' },
+  { img: g12, alt: 'Candid moment of a bride during a wedding ceremony, veil catching the light.' },
 ];
 
-const tiers = [
-  {
-    name: 'The Moment',
-    kicker: 'Entry level support',
-    body: 'For the business that needs current, on brand images and does not need a full production. One focused session, delivered ready to publish.',
-  },
-  {
-    name: 'The Momentum',
-    kicker: 'Ongoing content',
-    body: 'Regular sessions across the year so your brand imagery keeps pace with what you are actually launching, hiring for and selling.',
-  },
-  {
-    name: 'The Archive',
-    kicker: 'Comprehensive documentation',
-    body: 'The full visual record of a company. Team, space, product, process and leadership, documented and organized so anyone on your team can pull the right frame.',
-  },
-];
 ---
 
 <!doctype html>
@@ -135,14 +131,10 @@ const tiers = [
             loading="eager"
             format="png"
           />
-          <span class="mark-text">
-            <span class="mark-1">The McKinnis</span> <span class="mark-2">Edit</span>
-          </span>
         </a>
         <nav class="nav" aria-label="Primary">
           {nav.map((item) => <a href={item.href}>{item.label}</a>)}
         </nav>
-        <a class="head-cta" href={`mailto:${email}`}>Book</a>
       </div>
     </header>
 
@@ -152,16 +144,16 @@ const tiers = [
         <div class="wrap hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">San Antonio, Texas</p>
-            <h1 id="hero-title">
-              The McKinnis <em>Edit</em>
-            </h1>
+            <h1 id="hero-title" class="visually-hidden">The McKinnis Edit</h1>
             <hr class="rule" />
             <p class="lede">
               Brand, portrait, headshot and event photography for people who are building
               something. Nearly thirty years behind the camera, applied to one story at a time.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-solid" href={`mailto:${email}`}>Book a session</a>
+              <a class="btn btn-solid" href={bookingUrl} target="_blank" rel="noopener">
+                Book a session
+              </a>
               <a class="btn" href="#work">View the work</a>
             </div>
           </div>
@@ -261,79 +253,6 @@ const tiers = [
         </div>
       </section>
 
-      <!-- MEMBERSHIPS -->
-      <section id="memberships" class="memberships" aria-labelledby="memberships-title">
-        <div class="wrap">
-          <p class="eyebrow">Brand retainer memberships</p>
-          <h2 id="memberships-title">Photography that keeps up with the business</h2>
-          <p class="section-lede">
-            Most brands do not need one shoot. They need images arriving all year, in the same
-            voice. Three tiers, one standard.
-          </p>
-          <div class="tiers">
-            {
-              tiers.map((t) => (
-                <article class="tier reveal">
-                  <p class="tier-kicker">{t.kicker}</p>
-                  <h3>{t.name}</h3>
-                  <p>{t.body}</p>
-                </article>
-              ))
-            }
-          </div>
-          <div class="steps reveal">
-            <div class="step">
-              <h3>The Foundation</h3>
-              <p>
-                Every membership opens here. A working session on your brand, your audience and the
-                shot list that follows from both, so the first frame is already on strategy.
-              </p>
-            </div>
-            <div class="step">
-              <h3>The Launch</h3>
-              <p>
-                A starting package for new clients with something to announce. Built for the moment
-                a business, a role or a book goes public.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WORKSHOPS -->
-      <section id="workshops" class="workshops dark" aria-labelledby="workshops-title">
-        <div class="wrap ws-grid">
-          <figure class="ws-figure reveal">
-            <Image
-              src={workshopImg}
-              alt="Close portrait of a graduate making a university hand sign, lit with soft directional light."
-              widths={[380, 620, 900]}
-              sizes="(max-width: 900px) 88vw, 38vw"
-              loading="lazy"
-              format="webp"
-              quality={70}
-            />
-          </figure>
-          <div class="ws-copy">
-            <p class="eyebrow">Workshops</p>
-            <h2 id="workshops-title">Learn the craft in the room</h2>
-            <p>
-              Live sessions for aspiring photographers and creatives. Recent workshops have covered
-              lighting, posing and framing, taught the way they are actually used on a paid job
-              rather than in theory.
-            </p>
-            <p>
-              Every workshop runs a standard tier, with a VIP Business Strategy upgrade for
-              photographers who want to talk pricing, packaging and how the work becomes a
-              business.
-            </p>
-            <a class="btn" href={`mailto:${email}?subject=Workshop%20interest`}
-              >Ask about the next date</a
-            >
-          </div>
-        </div>
-      </section>
-
       <!-- ABOUT -->
       <section id="about" class="about" aria-labelledby="about-title">
         <div class="wrap about-grid">
@@ -375,14 +294,15 @@ const tiers = [
             </figure>
             <figure class="reveal offset">
               <Image
-                src={aboutSecond}
-                alt="Still life of a graduation cap and tassel resting on a stack of striped upholstered boxes."
+                src={aboutHeadshot}
+                alt="Portrait of Michael McKinnis, photographer and founder of The McKinnis Edit."
                 widths={[300, 480, 720]}
                 sizes="(max-width: 900px) 88vw, 24vw"
                 loading="lazy"
                 format="webp"
                 quality={70}
               />
+              <figcaption>Michael McKinnis</figcaption>
             </figure>
           </div>
         </div>
@@ -397,11 +317,26 @@ const tiers = [
             Tell me what you are building and when you need the images. I will come back with a
             plan, a date and a clear price.
           </p>
-          <a class="btn btn-solid contact-btn" href={`mailto:${email}`}>{email}</a>
+          <div class="contact-actions">
+            <a class="btn btn-solid" href={bookingUrl} target="_blank" rel="noopener">
+              Book a session
+            </a>
+            <a class="btn contact-btn" href={`mailto:${email}`}>{email}</a>
+          </div>
           <p class="contact-meta">
             San Antonio, Texas<br />
-            Serving San Antonio, Austin, Houston and Dallas
+            Serving San Antonio, Austin, Houston and Dallas<br />
+            <a class="contact-phone" href={phoneHref}>{phone}</a>
           </p>
+          <div class="contact-social">
+            {
+              social.map((s) => (
+                <a href={s.href} target="_blank" rel="noopener">
+                  {s.label}
+                </a>
+              ))
+            }
+          </div>
         </div>
       </section>
     </main>
@@ -418,9 +353,6 @@ const tiers = [
             format="png"
           />
         </div>
-        <p class="foot-meta">
-          San Antonio, Texas &middot; <a href={`mailto:${email}`}>{email}</a>
-        </p>
         <p class="foot-fine">
           All photography is original work by Michael McKinnis / The McKinnis Edit.
         </p>
@@ -462,6 +394,20 @@ const tiers = [
     </script>
 
     <style>
+      /* Removed from view but kept for screen readers and document outline
+         (preserves the page's single h1 and the hero's aria-labelledby). */
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
       /* ---------- Header ---------- */
       .site-head {
         position: sticky;
@@ -511,25 +457,6 @@ const tiers = [
         height: clamp(2rem, 1.6rem + 1.3vw, 2.6rem);
         width: auto;
       }
-      .mark-text {
-        font-family: var(--serif);
-        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
-        color: var(--cream);
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-        padding-left: 0.85rem;
-        margin-left: 0.85rem;
-        border-left: 1px solid rgba(209, 165, 74, 0.35);
-      }
-      .mark-2 {
-        font-style: italic;
-        color: var(--gold);
-      }
-      @media (max-width: 420px) {
-        .mark-text {
-          display: none;
-        }
-      }
       .nav {
         display: flex;
         flex-wrap: wrap;
@@ -549,19 +476,6 @@ const tiers = [
       .nav a:focus-visible {
         color: var(--gold);
         border-color: var(--gold);
-      }
-      .head-cta {
-        font-size: 0.68rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: var(--navy);
-        background: var(--gold);
-        padding: 0.6rem 1.15rem;
-        transition: opacity 0.25s ease;
-      }
-      .head-cta:hover {
-        opacity: 0.85;
       }
       @media (max-width: 860px) {
         .head-inner {
@@ -601,17 +515,6 @@ const tiers = [
         grid-template-columns: 1.05fr 0.95fr;
         gap: clamp(2rem, 5vw, 4.5rem);
         align-items: center;
-      }
-      .hero h1 {
-        font-size: clamp(2.9rem, 1.6rem + 6vw, 6.2rem);
-        line-height: 0.98;
-        color: var(--cream);
-        margin: 0 0 1.75rem;
-      }
-      .hero h1 em {
-        display: block;
-        font-style: italic;
-        color: var(--gold);
       }
       .lede {
         font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.18rem);
@@ -759,106 +662,6 @@ const tiers = [
         transform: scale(1.04);
       }
 
-      /* ---------- Memberships ---------- */
-      .memberships {
-        background: var(--cream);
-      }
-      .memberships h2 {
-        font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.8rem);
-        color: var(--navy);
-        max-width: 18ch;
-      }
-      .section-lede {
-        margin-top: 1.15rem;
-        margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
-        max-width: 46ch;
-        color: var(--ink-soft);
-      }
-      .tiers {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: clamp(1.25rem, 2.5vw, 2rem);
-      }
-      .tier {
-        background: #fff;
-        border: 1px solid rgba(36, 59, 108, 0.12);
-        border-top: 3px solid var(--gold);
-        padding: clamp(1.5rem, 3vw, 2.25rem);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-      }
-      .tier:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 40px rgba(36, 59, 108, 0.1);
-      }
-      .tier-kicker {
-        font-size: 0.66rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.6rem;
-      }
-      .tier h3 {
-        font-size: 1.55rem;
-        color: var(--navy);
-        margin-bottom: 0.85rem;
-      }
-      .tier p {
-        font-size: 0.94rem;
-        color: var(--ink-soft);
-        margin: 0;
-      }
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: clamp(1.5rem, 4vw, 3.5rem);
-        margin-top: clamp(2.5rem, 5vw, 4rem);
-        padding-top: clamp(2rem, 4vw, 3rem);
-        border-top: 1px solid rgba(36, 59, 108, 0.15);
-      }
-      .step h3 {
-        font-size: 1.25rem;
-        color: var(--navy);
-        margin-bottom: 0.6rem;
-      }
-      .step p {
-        font-size: 0.94rem;
-        color: var(--ink-soft);
-        margin: 0;
-      }
-
-      /* ---------- Workshops ---------- */
-      .ws-grid {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: clamp(2rem, 5vw, 4.5rem);
-        align-items: center;
-      }
-      .ws-figure {
-        margin: 0;
-      }
-      .ws-figure img {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        border: 1px solid rgba(209, 165, 74, 0.3);
-      }
-      .workshops h2 {
-        font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.8rem);
-        margin-bottom: 1.4rem;
-      }
-      .workshops p {
-        color: var(--tan);
-        max-width: 48ch;
-      }
-      .workshops .btn {
-        margin-top: 1rem;
-      }
-      @media (max-width: 900px) {
-        .ws-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
       /* ---------- About ---------- */
       .about {
         background: #f3ece5;
@@ -939,6 +742,12 @@ const tiers = [
         max-width: 44ch;
         margin-bottom: 2.25rem;
       }
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9rem;
+      }
       .contact-btn {
         font-size: 0.8rem;
         letter-spacing: 0.12em;
@@ -952,6 +761,38 @@ const tiers = [
         text-transform: uppercase;
         color: var(--sage);
         line-height: 2;
+      }
+      .contact-phone {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.25s ease, border-color 0.25s ease;
+      }
+      .contact-phone:hover,
+      .contact-phone:focus-visible {
+        color: var(--gold);
+        border-color: var(--gold);
+      }
+      .contact-social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      .contact-social a {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--tan);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.25s ease, border-color 0.25s ease;
+      }
+      .contact-social a:hover,
+      .contact-social a:focus-visible {
+        color: var(--gold);
+        border-color: var(--gold);
       }
 
       /* ---------- Footer ---------- */
@@ -972,17 +813,6 @@ const tiers = [
       .foot-logo :global(img) {
         height: 3rem;
         width: auto;
-      }
-      .foot-meta {
-        margin: 0;
-        font-size: 0.85rem;
-      }
-      .foot-meta a {
-        color: var(--gold);
-        text-decoration: none;
-      }
-      .foot-meta a:hover {
-        text-decoration: underline;
       }
       .foot-fine {
         margin: 0;

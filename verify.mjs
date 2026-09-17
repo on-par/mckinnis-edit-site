@@ -104,10 +104,7 @@ check('No em dash in rendered body text', !bodyText.includes('—'));
 const required = [
   "LET'S CREATE TOGETHER",
   'San Antonio',
-  'The Moment',
-  'The Momentum',
-  'The Archive',
-  'mckinnis.edit@gmail.com',
+  'themckinnisedit@gmail.com',
 ];
 for (const s of required) {
   check(`Contains "${s}"`, bodyText.includes(s));
