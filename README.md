@@ -1,82 +1,47 @@
-# The McKinnis Edit
+# The McKinnis Edit — website
 
-A one-page marketing site for The McKinnis Edit, a San Antonio photography studio led by
-Michael McKinnis, offering brand, portrait, headshot and event photography.
+Static, responsive website for **The McKinnis Edit** (Michael McKinnis, brand / portrait / headshot / event / wedding / interior photography, San Antonio, TX).
 
-Live: https://on-par.github.io/mckinnis-edit-site/
+Plain HTML, CSS and JavaScript — no build step, no framework, no dependencies. Open `index.html` in a browser to view it, or upload the whole folder to any static host.
 
-## Stack
+Designed and built by Adrienne Palmer (Studio Nouveaux), November 2026.
 
-- [Astro](https://astro.build) 7, static output
-- `astro:assets` for image optimization (source JPEGs are converted to responsive WebP at build)
-- Self-hosted fonts via `@fontsource` (Playfair Display for headlines, DM Sans for body)
-- No client framework. One small inline script for the sticky header and scroll reveals.
+---
 
-## Structure
-
-Single page with anchor-scroll navigation: hero, brand statement, services, featured work,
-memberships, workshops, about, contact.
+## What's in the box
 
 ```
-src/
-  assets/photos/   32 original session photographs (the only images used on the site)
-  pages/index.astro  the whole page
-  styles/global.css  design tokens and base styles
-public/            favicon and .nojekyll
-verify.mjs         Playwright gate that runs against the live URL
+index.html                     Home page
+portfolio/
+  branding-headshots.html      Landing page — Branding & Headshots
+  events.html                  Landing page — Events
+  weddings.html                Landing page — Weddings
+  interior-design.html         Landing page — Interior Design
+css/styles.css                 All styles (one file)
+js/main.js                     All behaviour (one file) — CONFIG block at the top
+img/                           Logo, About photo, home hero photos
+img/portfolio/<category>/      Portfolio photos, optimized WebP at 800/1200/1800px
+sitemap.xml, robots.txt        For search engines
+CLAUDE.md                      Instructions for Claude (AI) taking over the project
+docs/DUBSADO-INTEGRATION.md    Spec for wiring forms and booking to Dubsado
+docs/LAUNCH-CHECKLIST.md       Everything left to fill in before going live
 ```
 
-## Brand tokens
+## Features
 
-| Role | Hex |
-| --- | --- |
-| Primary / background dark | `#243b6c` |
-| Accent / gold | `#d1a54a` |
-| Light background | `#f9f5f1` |
-| Text / body (on dark) | `#dbc2af` |
-| Secondary accent | `#aebfaf` |
+- **Hero** — full-screen navy hero with a soft gradient that changes color with each slide (#243b6c, #d1a54a, #aebfaf, #dbc2af, #f9f5f1), auto-advancing photo carousel with pause / previous / next, swipe on mobile, and a still version for visitors who turn on "reduce motion".
+- **Navigation** — transparent over the hero, fills navy on scroll; Portfolio dropdown with the four landing pages; full-screen menu on mobile.
+- **Packages** — tabs per service, select a package, then "Continue to booking" opens that package's Dubsado link.
+- **Portfolio landing pages** — each works as a standalone landing page for search and AI answer engines: own hero, plain-language summary, quick facts, full photo gallery with lightbox, FAQ, links to the other categories, and a contact form with the service pre-selected.
+- **SEO / AEO** — unique titles and descriptions, canonical URLs, Open Graph tags, and structured data (ProfessionalService, Service, FAQPage, BreadcrumbList) on every page; descriptive alt text on every photo; sitemap and robots.txt.
+- **Performance** — responsive WebP images (the browser picks the right size), lazy loading below the fold, no third-party scripts except Google Fonts.
 
-On the light background, body copy uses a dark ink derived from the navy (`#1a2a4d`) so it
-stays readable. `#dbc2af` only has sufficient contrast on the navy.
+## Hosting
 
-## Develop
+Deployed as this repo's GitHub Pages site (`gh-pages` branch), served at `https://on-par.github.io/mckinnis-edit-site/`. All internal links/assets are relative, so the site works under that subpath without changes.
 
-```sh
-npm install
-npm run dev
-npm run build      # outputs to dist/
-```
+The canonical URLs, Open Graph tags and sitemap assume the site lives at **https://on-par.github.io/mckinnis-edit-site** with portfolio pages at `/portfolio/<name>.html`. If a custom domain (e.g. themckinnisedit.com) is pointed at this site later, or the path changes, search-and-replace the current base URL across all `.html` files, `sitemap.xml` and `robots.txt`.
 
-## Deploy
+## Before launch
 
-Pages is served from the `gh-pages` branch, not GitHub Actions (the available token has no
-`workflow` scope, so a workflow file cannot be pushed).
-
-```sh
-npm run build
-npm run deploy     # publishes dist/ to the gh-pages branch
-```
-
-`npm run deploy` force-pushes the contents of `dist/` (plus a `.nojekyll` marker) to
-`gh-pages`. Pages is configured with `source.branch = gh-pages`, `source.path = /`.
-`astro.config.mjs` sets `site: 'https://on-par.github.io'` and `base: '/mckinnis-edit-site'`,
-so every asset and internal link resolves under the project subpath.
-
-## Verify
-
-```sh
-npm run build && npm run deploy
-node verify.mjs                                   # defaults to the live URL
-```
-
-The gate asserts HTTP 200, zero console errors, zero failed requests, one `<h1>`, a real meta
-description, non-empty `alt` plus a non-zero `naturalWidth` on every image, at least 8 rendered
-images, no em dash anywhere in the body text, presence of the required brand strings, working
-nav anchors, and no horizontal overflow at 390x844. It writes `shots/desktop-full.png` and
-`shots/mobile-full.png`.
-
-## Content notes
-
-Copy is written from the client design brief only. Deliberately not present because the brief
-leaves them blank: testimonials, pricing, phone number, Dubsado booking link, social links.
-All photography is original work by Michael McKinnis / The McKinnis Edit.
+See **docs/LAUNCH-CHECKLIST.md**. The short version: package prices and details, Dubsado booking links per package, the contact form endpoint, and a few FAQ answers marked `[Confirm …]`.

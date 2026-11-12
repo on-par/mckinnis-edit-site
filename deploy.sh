@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-# Publish dist/ to the gh-pages branch. No GitHub Actions (token lacks `workflow` scope).
+# Publish the static site to the gh-pages branch. No GitHub Actions (token lacks `workflow` scope).
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$REPO_ROOT"
 
-[ -d dist ] || { echo "dist/ missing. Run npm run build first."; exit 1; }
-
-touch dist/.nojekyll
-
 TMP="$(mktemp -d)"
-cp -R dist/. "$TMP/"
+
+# Public site files only — docs/, CLAUDE.md, README.md and .claude/ are project
+# documentation/tooling, not part of the published site.
+cp -R index.html css js img portfolio sitemap.xml robots.txt \
+      favicon-32.png apple-touch-icon.png logo-512.png "$TMP/"
+touch "$TMP/.nojekyll"
 
 cd "$TMP"
 git init -q
@@ -24,4 +25,4 @@ git push -q --force origin gh-pages
 
 cd "$REPO_ROOT"
 rm -rf "$TMP"
-echo "Pushed dist/ to gh-pages."
+echo "Pushed site to gh-pages."
