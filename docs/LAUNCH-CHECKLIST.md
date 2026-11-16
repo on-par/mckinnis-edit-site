@@ -8,15 +8,18 @@
 > - Domain: canonical is https://themckinnisedit.com (www redirects to it).
 >
 > **Status, November 12, 2026 (hosting migration):** This site replaced the old one-page Astro build that was previously in the `on-par/mckinnis-edit-site` GitHub repo. It's now deployed from that repo's `gh-pages` branch at `https://on-par.github.io/mckinnis-edit-site/`, so canonical URLs, Open Graph tags, JSON-LD and `sitemap.xml`/`robots.txt` currently point there instead of `themckinnisedit.com`. Point the custom domain at this repo and do a find-and-replace of the base URL once DNS is ready — see README.md → Hosting.
+>
+> **Status, November 16, 2026 (approved pricing applied):** Michael sent the approved gallery names and final pricing sheet. All "Inquire" placeholders in `#packages` are now replaced with real "Starting at $X" prices, and two package tabs that were missing entirely — **Wedding** and **Interior Design** — were added (the portfolio pages for those services already linked to `#packages`, but there was nothing there to select). Tier names matched the approved sheet exactly for Brand/Portrait/Headshot/Event. Add-on items (Headshot Mini Session, Additional Team Member, Additional Retouched Image, Custom Wedding Albums, Fine Art Wall Prints, Framed Wall Art) are shown as a note rather than selectable packages, all marked Custom Quote, per the sheet's instruction not to publish deliverable/image-count specifics.
 
 Everything still to fill in or decide before the site goes live. Search the files for the placeholder text shown to find each one.
 
 ## 1. Packages (index.html → `#packages`)
 
-- [ ] **Prices** — every card shows "Starting at" over `$—`. Replace `$—` inside each `<span class="pkg-card__price">` with the real starting price.
-- [ ] **Package names, descriptions and inclusions** — tier names (Essential / Signature / The Full Edit, etc.) and the bracketed inclusions are placeholders. Search for `<li>[` — there are 29 bracketed lines, e.g. `[Session length]`, `[# edited images]`, `[# hours coverage]`.
-- [ ] **"Most booked" / "Graduates" / "On-site" badges** — keep, change or delete.
-- [ ] **Dubsado booking link per package** — each package `<input>` has `data-dubsado-url=""` (12 total). Paste the Dubsado scheduler or proposal link for that package. Empty ones fall back to `DUBSADO_FALLBACK_URL` in `js/main.js` (currently Michael's existing scheduler). See docs/DUBSADO-INTEGRATION.md.
+- [x] **Prices** — all 6 service tabs (Brand, Portrait, Headshot, Event, Wedding, Interior Design) now show real "Starting at $X" prices from the approved pricing sheet. Headshot's "Company Day" and all wedding/headshot add-ons are marked "Custom Quote".
+- [x] **Package names and descriptions** — tier names match the approved sheet. Bracketed placeholder inclusions were already removed in the Nov 11 pass.
+- [ ] **"Most booked" / "Graduates" / "On-site" badges** — keep, change or delete. (No badge was added to the new Wedding/Interior Design tabs — ask Michael if he wants one.)
+- [ ] **Dubsado booking link per package** — each package `<input>` has `data-dubsado-url=""` (18 total now, including the 6 new Wedding/Interior Design ones). Paste the Dubsado scheduler or proposal link for that package. Empty ones fall back to `DUBSADO_FALLBACK_URL` in `js/main.js` (currently Michael's existing scheduler). See docs/DUBSADO-INTEGRATION.md.
+- [ ] **Gallery naming** — the approved sheet's "Website Gallery Navigation" list names 6 distinct galleries (Branding, Portraits, Headshots, Events, Interiors & Architecture, Weddings), but the live portfolio nav still only has 4 pages (Branding & Headshots combined into one page; no standalone Portraits gallery; "Interior Design" not "Interiors & Architecture"). Splitting/renaming galleries to match wasn't done yet — confirm with Michael whether that's wanted before launch or as a follow-up.
 
 ## 2. Contact form (all 5 pages)
 
