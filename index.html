@@ -248,6 +248,8 @@
           <button role="tab" id="tab-portrait" aria-controls="panel-portrait" aria-selected="false" tabindex="-1" data-tab="portrait">Portrait</button>
           <button role="tab" id="tab-headshot" aria-controls="panel-headshot" aria-selected="false" tabindex="-1" data-tab="headshot">Headshot</button>
           <button role="tab" id="tab-event" aria-controls="panel-event" aria-selected="false" tabindex="-1" data-tab="event">Event</button>
+          <button role="tab" id="tab-wedding" aria-controls="panel-wedding" aria-selected="false" tabindex="-1" data-tab="wedding">Wedding</button>
+          <button role="tab" id="tab-interior" aria-controls="panel-interior" aria-selected="false" tabindex="-1" data-tab="interior">Interior Design</button>
         </div>
 
         <form class="pkg-form" data-pkg-form>
@@ -257,7 +259,7 @@
             <label class="pkg-card">
               <input type="radio" name="package" value="brand-essential" data-service="Brand" data-name="Essential" data-dubsado-url="">
               <span class="pkg-card__tier">Essential</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$1,500</span>
               <span class="pkg-card__desc">A focused brand refresh for a website or launch.</span>
               <ul><li>Online gallery</li></ul>
               <span class="pkg-card__select">Select</span>
@@ -266,7 +268,7 @@
               <input type="radio" name="package" value="brand-signature" data-service="Brand" data-name="Signature" data-dubsado-url="">
               <span class="pkg-card__badge">Most booked</span>
               <span class="pkg-card__tier">Signature</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$3,500</span>
               <span class="pkg-card__desc">A full image library for site, deck and social.</span>
               <ul><li>Pre-session brand consult</li></ul>
               <span class="pkg-card__select">Select</span>
@@ -274,7 +276,7 @@
             <label class="pkg-card">
               <input type="radio" name="package" value="brand-full-edit" data-service="Brand" data-name="The Full Edit" data-dubsado-url="">
               <span class="pkg-card__tier">The Full Edit</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$5,500</span>
               <span class="pkg-card__desc">Ongoing or seasonal content partnership.</span>
               <ul><li>Extended creative direction</li><li>Priority turnaround</li></ul>
               <span class="pkg-card__select">Select</span>
@@ -287,7 +289,7 @@
             <label class="pkg-card">
               <input type="radio" name="package" value="portrait-mini" data-service="Portrait" data-name="Mini" data-dubsado-url="">
               <span class="pkg-card__tier">Mini</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$275</span>
               <span class="pkg-card__desc">A short, focused portrait session.</span>
               
               <span class="pkg-card__select">Select</span>
@@ -296,7 +298,7 @@
               <input type="radio" name="package" value="portrait-milestone" data-service="Portrait" data-name="Milestone" data-dubsado-url="">
               <span class="pkg-card__badge">Graduates</span>
               <span class="pkg-card__tier">Milestone</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$500</span>
               <span class="pkg-card__desc">Graduations, new chapters, big moments.</span>
               <ul><li>Online gallery</li></ul>
               <span class="pkg-card__select">Select</span>
@@ -304,7 +306,7 @@
             <label class="pkg-card">
               <input type="radio" name="package" value="portrait-lifestyle" data-service="Portrait" data-name="Lifestyle" data-dubsado-url="">
               <span class="pkg-card__tier">Lifestyle</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$850</span>
               <span class="pkg-card__desc">Extended session, on location.</span>
               
               <span class="pkg-card__select">Select</span>
@@ -317,7 +319,7 @@
             <label class="pkg-card">
               <input type="radio" name="package" value="headshot-individual" data-service="Headshot" data-name="Individual" data-dubsado-url="">
               <span class="pkg-card__tier">Individual</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$275</span>
               <span class="pkg-card__desc">One person, polished and current.</span>
               
               <span class="pkg-card__select">Select</span>
@@ -326,7 +328,7 @@
               <input type="radio" name="package" value="headshot-team" data-service="Headshot" data-name="Team" data-dubsado-url="">
               <span class="pkg-card__badge">On-site</span>
               <span class="pkg-card__tier">Team</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$1,500</span>
               <span class="pkg-card__desc">Matched lighting and framing for the whole team.</span>
               <ul><li>On-site setup</li></ul>
               <span class="pkg-card__select">Select</span>
@@ -334,11 +336,12 @@
             <label class="pkg-card">
               <input type="radio" name="package" value="headshot-enterprise" data-service="Headshot" data-name="Company Day" data-dubsado-url="">
               <span class="pkg-card__tier">Company Day</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
+              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Custom Quote</span>
               <span class="pkg-card__desc">Large teams and multi-office directories.</span>
               <ul><li>Directory-ready delivery</li></ul>
               <span class="pkg-card__select">Select</span>
             </label>
+            <p class="pkg-addons">Add-ons: Headshot Mini Session — $295 &middot; Additional Team Member — $75 &middot; Additional Retouched Image — $50.</p>
           </fieldset>
 
           <!-- EVENT -->
@@ -347,25 +350,78 @@
             <label class="pkg-card">
               <input type="radio" name="package" value="event-2hr" data-service="Event" data-name="Highlights" data-dubsado-url="">
               <span class="pkg-card__tier">Highlights</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
-              <span class="pkg-card__desc">Key moments for a shorter event.</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$550</span>
+              <span class="pkg-card__desc">Key moments for a shorter event. 2 hours of coverage.</span>
               
               <span class="pkg-card__select">Select</span>
             </label>
             <label class="pkg-card pkg-card--featured">
               <input type="radio" name="package" value="event-half" data-service="Event" data-name="Half Day" data-dubsado-url="">
               <span class="pkg-card__tier">Half Day</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
-              <span class="pkg-card__desc">Launches, galas and conferences.</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$1,100</span>
+              <span class="pkg-card__desc">Launches, galas and conferences. 4 hours of coverage.</span>
               <ul><li>Next-day preview set</li></ul>
               <span class="pkg-card__select">Select</span>
             </label>
             <label class="pkg-card">
               <input type="radio" name="package" value="event-full" data-service="Event" data-name="Full Day" data-dubsado-url="">
               <span class="pkg-card__tier">Full Day</span>
-              <span class="pkg-card__price pkg-card__price--inquire"><span class="pkg-card__from">Pricing</span>Inquire</span>
-              <span class="pkg-card__desc">Complete coverage, start to finish.</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$2,200</span>
+              <span class="pkg-card__desc">Complete coverage, start to finish. 8 hours of coverage.</span>
               <ul><li>Priority delivery</li></ul>
+              <span class="pkg-card__select">Select</span>
+            </label>
+          </fieldset>
+
+          <!-- WEDDING -->
+          <fieldset class="pkg-panel" role="tabpanel" id="panel-wedding" aria-labelledby="tab-wedding" data-panel="wedding" hidden>
+            <legend class="sr-only">Wedding photography packages</legend>
+            <label class="pkg-card">
+              <input type="radio" name="package" value="wedding-4hr" data-service="Wedding" data-name="4-Hour Wedding" data-dubsado-url="">
+              <span class="pkg-card__tier">4-Hour Wedding</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$3,500</span>
+              <span class="pkg-card__desc">Ceremony and key moments, quietly covered.</span>
+              <span class="pkg-card__select">Select</span>
+            </label>
+            <label class="pkg-card pkg-card--featured">
+              <input type="radio" name="package" value="wedding-6hr" data-service="Wedding" data-name="6-Hour Wedding" data-dubsado-url="">
+              <span class="pkg-card__tier">6-Hour Wedding</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$6,500</span>
+              <span class="pkg-card__desc">Getting ready through reception highlights.</span>
+              <span class="pkg-card__select">Select</span>
+            </label>
+            <label class="pkg-card">
+              <input type="radio" name="package" value="wedding-8hr" data-service="Wedding" data-name="8-Hour Wedding" data-dubsado-url="">
+              <span class="pkg-card__tier">8-Hour Wedding</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$15,000</span>
+              <span class="pkg-card__desc">Full-day coverage, start to last dance.</span>
+              <span class="pkg-card__select">Select</span>
+            </label>
+            <p class="pkg-addons">Optional add-ons (custom quote): custom wedding albums, fine art wall prints, framed wall art.</p>
+          </fieldset>
+
+          <!-- INTERIOR DESIGN -->
+          <fieldset class="pkg-panel" role="tabpanel" id="panel-interior" aria-labelledby="tab-interior" data-panel="interior" hidden>
+            <legend class="sr-only">Interior design and architectural photography packages</legend>
+            <label class="pkg-card">
+              <input type="radio" name="package" value="interior-essential" data-service="Interior Design" data-name="Essential Interiors" data-dubsado-url="">
+              <span class="pkg-card__tier">Essential Interiors</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$500</span>
+              <span class="pkg-card__desc">A focused shoot for a single space or listing.</span>
+              <span class="pkg-card__select">Select</span>
+            </label>
+            <label class="pkg-card pkg-card--featured">
+              <input type="radio" name="package" value="interior-signature" data-service="Interior Design" data-name="Signature Spaces" data-dubsado-url="">
+              <span class="pkg-card__tier">Signature Spaces</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$1,000</span>
+              <span class="pkg-card__desc">Full coverage of a home or completed project.</span>
+              <span class="pkg-card__select">Select</span>
+            </label>
+            <label class="pkg-card">
+              <input type="radio" name="package" value="interior-full-property" data-service="Interior Design" data-name="The Full Property Edit" data-dubsado-url="">
+              <span class="pkg-card__tier">The Full Property Edit</span>
+              <span class="pkg-card__price"><span class="pkg-card__from">Starting at</span>$2,000</span>
+              <span class="pkg-card__desc">Every room, every angle, for a full portfolio piece.</span>
               <span class="pkg-card__select">Select</span>
             </label>
           </fieldset>

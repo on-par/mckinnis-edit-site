@@ -391,6 +391,7 @@ body.menu-open { overflow: hidden; }
 .pkg-card__price { font-family: var(--font-display); font-size: clamp(40px, 3.6vw, 52px); line-height: 1.1; margin: 10px 0 12px; }
 .pkg-card__price--inquire { font-size: clamp(30px, 2.6vw, 38px); }
 .pkg-card__from { display: block; margin-bottom: 4px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.pkg-addons { grid-column: 1 / -1; color: var(--muted); font-size: 14px; margin-top: 4px; }
 .pkg-card__desc { color: var(--muted); margin-bottom: 24px; }
 .pkg-card ul { display: grid; gap: 10px; padding-top: 22px; border-top: 1px solid var(--line); margin-bottom: 32px; flex: 1; font-size: 15px; }
 .pkg-card li { display: flex; gap: 12px; }
