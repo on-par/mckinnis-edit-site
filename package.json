@@ -1,0 +1,9 @@
+{
+  "name": "mckinnis-edit-site",
+  "version": "2.0.0",
+  "description": "The McKinnis Edit, San Antonio photography. Static 5-page site.",
+  "private": true,
+  "scripts": {
+    "build": "bash scripts/build.sh"
+  }
+}
