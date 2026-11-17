@@ -32,9 +32,24 @@ Sources: help.dubsado.com ("Share a lead capture form", "Dubsado triggers and ac
 
 **What to do:**
 
-1. In Dubsado, create (or reuse) an **appointment scheduler** or **public proposal** per package. Michael decides how granular this is — one per package (12), one per service (4), or one for everything.
+1. In Dubsado, create (or reuse) an **appointment scheduler** or **public proposal** per package. Michael decides how granular this is — one per package (18), one per service (6), or one for everything.
 2. Paste each link into that input's `data-dubsado-url`.
 3. Any input left empty falls back to `CONFIG.DUBSADO_FALLBACK_URL` in `js/main.js` (currently Michael's existing scheduler: `https://hello.dubsado.com/public/appointment-scheduler/62105b369a4d30eaf363a718/schedule`).
+
+**Done, November 17, 2026 — one scheduler per service (6).** Proposals were ruled out for this slot: they're designed to be applied to an existing project (sent privately after a lead is reviewed), not opened cold from a public link. Each scheduler below is a duplicate of the "Free Consultation" template (15 min, "I'll call you at the scheduled time!"); the public link pattern is `https://hello.dubsado.com/public/appointment-scheduler/<id>/schedule`.
+
+| Service | Scheduler template | Admin ID |
+|---|---|---|
+| Brand | Brand Photography Consultation | `6afc6e4deabf1f81e0a5f2f9` |
+| Portrait | Portrait Photography Consultation | `6afc6ef8eabf1f81e0a6142f` |
+| Headshot | Headshot Photography Consultation | `6afc6f19eabf1f81e0a61a44` |
+| Event | Event Photography Consultation | `6afc6f42eabf1f81e0a62416` |
+| Wedding | Wedding Photography Consultation | `6afc6f76eabf1f81e0a631c1` |
+| Interior Design | Interior Design Photography Consultation | `6afc6fadeabf1f81e0a63cd8` |
+
+Each still carries the duplicated placeholder calendar description ("Greetings from Sample Templates for New Accounts!") — worth customizing per service in Dubsado when there's time, but it doesn't block booking.
+
+After the consult, Michael sends the matching **Proposal** (7 already exist, several already branded) from within that lead's project — that's where the contract and invoice live, per Dubsado's own design for proposals.
 
 **Behaviour already built** (`js/main.js`, "Package selector → Dubsado"): selecting a card updates the sticky summary bar and sets the "Continue to booking" link to that URL; it opens in a new tab. No further code is needed for Part 1.
 
