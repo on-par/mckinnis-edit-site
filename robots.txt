@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://on-par.github.io/mckinnis-edit-site/sitemap.xml
+Sitemap: https://themckinnisedit.com/sitemap.xml

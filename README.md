@@ -38,9 +38,11 @@ docs/LAUNCH-CHECKLIST.md       Everything left to fill in before going live
 
 ## Hosting
 
-Deployed as this repo's GitHub Pages site (`gh-pages` branch), served at `https://on-par.github.io/mckinnis-edit-site/`. All internal links/assets are relative, so the site works under that subpath without changes.
+Deployed as this repo's GitHub Pages site, served at the custom domain **https://themckinnisedit.com** (DNS already points here via Cloudflare; a `CNAME` file in the repo root holds the domain). All internal links/assets are relative, so the site works whether Pages serves from the repo root or a subpath.
 
-The canonical URLs, Open Graph tags and sitemap assume the site lives at **https://on-par.github.io/mckinnis-edit-site** with portfolio pages at `/portfolio/<name>.html`. If a custom domain (e.g. themckinnisedit.com) is pointed at this site later, or the path changes, search-and-replace the current base URL across all `.html` files, `sitemap.xml` and `robots.txt`.
+The canonical URLs, Open Graph tags, JSON-LD and sitemap assume the site lives at **https://themckinnisedit.com**. If the domain or path ever changes again, search-and-replace the base URL across all `.html` files, `sitemap.xml` and `robots.txt`.
+
+**Note:** GitHub Pages' source branch needs to be set to `main` (root) in **Settings → Pages** — it was previously serving a separate `gh-pages` branch that still had the old one-page Astro site. See docs/LAUNCH-CHECKLIST.md for the current status.
 
 ## Before launch
 
