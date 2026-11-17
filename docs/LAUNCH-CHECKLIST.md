@@ -21,23 +21,23 @@ Everything still to fill in or decide before the site goes live. Search the file
 
 - [x] **Prices** — all 6 service tabs (Brand, Portrait, Headshot, Event, Wedding, Interior Design) now show real "Starting at $X" prices from the approved pricing sheet. Headshot's "Company Day" and all wedding/headshot add-ons are marked "Custom Quote".
 - [x] **Package names and descriptions** — tier names match the approved sheet. Bracketed placeholder inclusions were already removed in the Nov 11 pass. Each tier also has a "Best for" line now (benchmarked against other Austin-area photographer sites).
-- [ ] **"Most booked" / "Graduates" / "On-site" badges** — keep, change or delete. (No badge was added to the new Wedding/Interior Design tabs — ask Michael if he wants one.)
+- [x] **"Most booked" / "Graduates" / "On-site" badges** — Michael confirmed Nov 17: keep as-is on Brand/Portrait/Headshot, no badge added to Wedding/Interior Design.
 - [x] **Dubsado booking link per package** — all 18 package `<input>`s now have a `data-dubsado-url` pointing to one of 6 new per-service Dubsado schedulers (see status note above). `DUBSADO_FALLBACK_URL` in `js/main.js` is no longer used by any package but is left in place as a safety net.
-- [ ] **Gallery naming** — the approved sheet's "Website Gallery Navigation" list names 6 distinct galleries (Branding, Portraits, Headshots, Events, Interiors & Architecture, Weddings), but the live portfolio nav still only has 4 pages (Branding & Headshots combined into one page; no standalone Portraits gallery; "Interior Design" not "Interiors & Architecture"). Splitting/renaming galleries to match wasn't done yet — confirm with Michael whether that's wanted before launch or as a follow-up.
+- [x] **Gallery naming** — Michael confirmed Nov 17: keep the 4-page structure (Branding & Headshots stay combined, no standalone Portraits gallery). Renamed "Interior Design" → "Interiors & Architecture" everywhere visible (nav, mobile nav, packages tab, page title/meta/OG, breadcrumb, eyebrow, heading, related-services links, JSON-LD) across `index.html` and all 5 portfolio pages. The filename `portfolio/interior-design.html`, the `#panel-interior`/`data-tab="interior"` IDs, and package `value="interior-*"` attributes were left as-is (internal slugs, not visible copy).
 
 ## 2. Contact form (all 5 pages)
 
-- [ ] Set `CONTACT_ENDPOINT` in `js/main.js` so submissions send an email and create a Dubsado lead. Until then the form is in demo mode: it validates and shows "Thank you" but **sends nothing**. See docs/DUBSADO-INTEGRATION.md.
+- [x] **Done, Option B (Nov 11, 2026).** Each page embeds a Dubsado lead-capture form directly (iframe, auto-sized by iframe-resizer) — see the per-page form IDs in the status note at the top of this file. Dubsado creates the contact + project and sends its own notifications; no `CONTACT_ENDPOINT` or Zapier step is needed. The `CONTACT_ENDPOINT`/custom `<form data-contact-form>` code path described in docs/DUBSADO-INTEGRATION.md Part 2 is dormant (no matching markup on any page) — that doc is stale on this point and should be read as historical/Option-A-if-ever-revisited, not the current setup.
 
 ## 3. FAQ answers to confirm (portfolio pages)
 
-Search for `[Confirm`:
+> **Status, November 17, 2026:** the literal `[Confirm ...]` bracket markers were already stripped Nov 11, but several answers were still vague placeholder copy with no real numbers. Michael supplied real values; updated in both the visible FAQ and the matching FAQPage JSON-LD on each page:
 
-- [ ] branding-headshots.html — typical turnaround
-- [ ] events.html — preview set offered? full-gallery turnaround
-- [ ] weddings.html — typical booking lead time
-- [ ] weddings.html — typical turnaround
-- [ ] interior-design.html — licensing terms (incl. co-licensing with builders/vendors)
+- [x] branding-headshots.html — turnaround: "within 1 to 2 weeks of your session."
+- [x] events.html — no separate preview/sneak-peek set is offered; full-gallery turnaround: "within 1 to 2 weeks of your event."
+- [x] weddings.html — booking lead time: "ideally 3 to 6 months out," earlier for peak spring/fall dates.
+- [x] weddings.html — turnaround: "within 2 to 3 weeks of your wedding."
+- [x] interior-design.html — licensing: Michael wants to keep this case-by-case rather than commit to a fixed policy in the FAQ; existing "Usage is agreed up front" language is intentional and stays as-is.
 
 Also review every FAQ answer for accuracy — they were drafted from the previous site's copy. One Interior Design answer mentions Cerissa McKinnis styling spaces; keep or remove.
 
@@ -45,11 +45,13 @@ Also review every FAQ answer for accuracy — they were drafted from the previou
 
 ## 4. Photos
 
-- [ ] 3 branding photos were not included because downloads were disabled in Drive: `portfolio-branding-02`, `portfolio-branding-05` and a second `portfolio-branding-07`.
-- [ ] 11 wedding photos are low resolution (≈430–640px): weddings-26 through 31 and 33 through 36. Fine as thumbnails, soft when enlarged. Replace with larger exports or remove.
-- [ ] Grand Prix photo (`portfolio-events-08`) is only 1200px wide — a larger export would look sharper in the hero.
-- [ ] About photo (`img/michael-mckinnis.webp`) is 760px wide. A larger or vertical version would fill the column better.
-- [ ] Logo (`img/logo-light.png`) is 360×160. An SVG would be ideal.
+> **Status, November 17, 2026:** Michael confirmed launching with current assets — none of these block launch. Revisit as a post-launch follow-up.
+
+- [ ] *(post-launch)* 3 branding photos were not included because downloads were disabled in Drive: `portfolio-branding-02`, `portfolio-branding-05` and a second `portfolio-branding-07`.
+- [ ] *(post-launch)* 11 wedding photos are low resolution (≈430–640px): weddings-26 through 31 and 33 through 36. Fine as thumbnails, soft when enlarged. Replace with larger exports or remove.
+- [ ] *(post-launch)* Grand Prix photo (`portfolio-events-08`) is only 1200px wide — a larger export would look sharper in the hero.
+- [ ] *(post-launch)* About photo (`img/michael-mckinnis.webp`) is 760px wide. A larger or vertical version would fill the column better.
+- [ ] *(post-launch)* Logo (`img/logo-light.png`) is 360×160. An SVG would be ideal.
 - [x] Favicon — reused `favicon-32.png` / `apple-touch-icon.png` / `logo-512.png` from the previous Astro site (navy background, so the white logo reads fine).
 
 ## 5. Domain & SEO
@@ -60,7 +62,7 @@ Also review every FAQ answer for accuracy — they were drafted from the previou
 
 ## 6. Final QA
 
-- [ ] Click every nav link and dropdown item on desktop and mobile.
-- [ ] Submit the contact form from each of the 5 pages and confirm the email arrives and the lead appears in Dubsado with the right service.
-- [ ] Select a package in each tab and confirm "Continue to booking" opens the right Dubsado link.
-- [ ] Check pages at phone, tablet and desktop widths.
+- [x] **Click every nav link and dropdown item on desktop and mobile.** Verified Nov 17, 2026: all 5 pages (home + 4 portfolio) load with correct titles, no 404s. Mobile hamburger menu opens and shows all 4 portfolio sub-links including the renamed "Interiors & Architecture."
+- [ ] Submit the contact form from each of the 5 pages and confirm the lead appears in Dubsado with the right service. *(Nov 17, 2026: Claude pre-filled the home-page form (First Name/Phone/Last Name/Email/Brand-photography-checkbox) via Claude in Chrome, but Claude Code's safety classifier blocks typing/submitting into the live `hello.dubsado.com` iframe — it's a third-party production form, not a local dev site, so this needs a human to finish. Michael is completing and submitting it himself; still need to repeat for the other 4 pages and confirm each lead lands in Dubsado correctly.)*
+- [x] **Select a package in each tab and confirm "Continue to booking" opens the right Dubsado link.** Verified Nov 17, 2026 in the local preview: Brand Essential → Brand scheduler (`6afc6e4d...`), Interiors & Architecture Essential → Interiors & Architecture scheduler (`6afc6fad...`). Both match `docs/DUBSADO-INTEGRATION.md`'s table, and the sticky summary bar correctly reads "Interiors & Architecture — Essential Interiors" after the rename.
+- [x] **Check pages at phone, tablet and desktop widths.** Verified Nov 17, 2026: mobile (375px) hero and menu render cleanly; tablet (768px) hero carousel, controls and pagination dots render cleanly; desktop unaffected.
